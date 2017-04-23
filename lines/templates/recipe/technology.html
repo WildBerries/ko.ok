@@ -1,0 +1,50 @@
+{% extends 'html/base.html' %}
+{% load staticfiles %}
+{% load lines_tags %}
+
+
+{% block title %}{{ recipe.title|title }} - {{ line_name|title }} line{% endblock %}
+
+
+{% block add_styles %}
+  <link rel="stylesheet" href="{% static "css/recipe_"|concatenate:line_name|concatenate:"_style.css" %}">
+{% endblock add_styles %}
+
+
+
+{% block middle_line_content %}
+      <div id="details-title">
+        <a href={% url 'recipe_details' line_name recipe.slug %}><p>{{ recipe.title }}<p></a>
+      </div>
+  
+    <div id="details-generic">
+
+      <div class="nav-in-recipe" id="ingridients-button">
+        <a href={% url 'recipe_ingridients' line_name recipe.slug %}><div><span>Ингридиенты</span></div></a>
+      </div>
+
+      <div class="nav-in-recipe" id="technology-button">
+        <a href={% url 'recipe_technology' line_name recipe.slug %}><div class="active"><span>Технология</span></div></a>
+      </div>
+
+      <div id="technology">
+        <p>{{ recipe.cooking_technology }}</p>
+        <hr>
+        <p>{{ recipe.decor_delivery }}</p>
+        <hr>
+        <p>{{ recipe.organoleptic_stats }}</p>
+      </div>
+
+
+      <div id="details-image">
+        <img src={{ MEDIA_URL }}/images/{{ recipe.image_filename }}> 
+      </div>
+
+
+    </div>
+
+{% endblock %}
+
+<!--  <div id="delivery">
+        <p><strong>Требования к оформлению, подаче и реализации:</strong><br>{{ recipe.decor_delivery }}</p>
+      </div> -->

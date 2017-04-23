@@ -1,0 +1,24 @@
+{% extends 'html/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Search{% endblock %}
+
+{% block search_icon %}                                                                          
+  <li><a href={% url 'search' %}><img id='search' src={% static "/img/nav/search_on.svg" %}></a></li>
+{% endblock %}
+
+{% block middle_line_content %}
+  <div id="content">
+    <ol>
+      {% for recipe in recipes_all %}
+        <li><a href={% url 'recipe_details' recipe.line recipe.slug %}>{{ recipe.title }}</a><span> | {{ recipe.line }}</span></li>
+        <hr>
+      {% empty %}
+        <p>No lines_list found</p>
+      {% endfor %}
+    <ol>
+    </div>
+{% endblock %}
+
+
+{% block recipe_pages_control %}{% endblock %}

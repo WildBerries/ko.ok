@@ -1,0 +1,24 @@
+{% extends 'html/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ line_name|title }} line{% endblock %}
+
+{% block middle_line_content %}
+  <div id='content'>
+    <h1>{{ line_name }} цех</h1>
+    <ol>
+      <hr>
+      {% for recipe in recipes %}
+        <li><a href={% url 'recipe_details' line_name recipe.slug %}>{{ recipe.title }}</a></li>
+        <hr>
+      {% empty %}
+        <p>No recipes found</p>
+        <hr>
+      {% endfor %}
+    </ol>
+  </div>
+{% endblock %}
+
+
+{% block recipe_pages_control %}{% endblock %}
+

@@ -1,0 +1,366 @@
+@font-face {
+    font-family: 'custom';
+    src: url('/static/fonts/YesevaOne-Regular_v2.otf');
+}
+
+body {
+    background: #e6e6e6;
+}
+body main{
+    position: static;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+#content {
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 10%;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 80%;
+    height: 480px;
+}
+#content h1 {
+    text-align: center;
+}
+
+
+#details-title {
+
+    position: absolute;
+    width: 84%;
+    height: 50px;
+    right: 0px;
+    top: 10px;
+    border-radius: 25px 0 0 25px;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*background: #516d8c; #164f8e;*/
+    background: white;
+    overflow:hidden;
+}
+#details-title p {
+    color: black;
+    margin:  0 0  0 30px;
+    padding: 0px;
+    font-size: 2.5em;
+    text-align: left;
+}
+#details-generic {
+    position: absolute;
+    width: 90%;
+    height: 520px;
+    right: 0;
+    top: 70px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: white;
+    
+}
+
+
+
+/* Data wrapper */
+#wrapper {
+    position: absolute;
+    
+    width: 57%;
+    height: 75%;
+    
+    margin: 20px;
+    
+    background: white;
+    color: black;
+    
+}
+
+#wrapper span.sub-header {
+    font-family: 'custom';
+    font-weight: bold;
+    font-size: 1.3em;
+
+    
+}
+#wrapper span.content {
+
+    float: right;
+    font-size: 1.5em;
+}
+
+/* Serving line */
+#date-release {
+    margin-top:0;
+    margin-bottom:20px;
+    
+}
+/* Serving line */
+#serving {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+/* cooknig-time */
+#cooknig-time {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+/* Coking tools table */
+#tools {
+    margin-top:20px;
+}
+#tools table{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0 0 0;
+    margin-top:5px;
+    margin-bottom:20px;
+}
+
+#tools table td{
+   padding:0;
+   text-align: left;
+   font-family: "Lucida Console", Monaco, monospace;
+   font-size: 1.1em;
+   padding-left: 5px;
+}
+
+table#nutrition {
+    position: absolute;
+    font-family: arial, sans-serif;
+    font-size: 1.1em;
+    border-collapse: collapse;
+
+    width: 57%;
+    background: #c1c1ff;
+    left: 20px;
+    bottom: 20px;
+
+
+}
+
+#nutrition  td, th {
+    border: 1px solid black;
+    text-align: center;
+
+    padding: 8px;
+}
+
+#nutrition tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#details-image {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    padding: 0;
+}
+#details-image img {
+    width: 350px;
+    border-radius: 25px 0px 0px 25px;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* RECIPE INGRIDIENTS PAGE */
+
+/* ingridients table */
+
+div#ingridients {
+    position: absolute;
+    overflow: hidden;
+    
+    width: 57%;
+    height: 480px;
+   
+    
+    margin: 20px;
+    
+    background: thistle;
+}
+#ingridients table {
+    position: absolute;
+    border-collapse: collapse;
+    
+
+    margin: 5px;
+    background: #c1c1ff;
+
+    
+    
+}
+
+#ingridients table td, th {
+
+    text-align: center;
+    border: 1px solid black;
+    padding: 0;
+
+}
+#ingridients table th:nth-child(1) {
+    word-break:break-all;
+    width: 10%;
+    
+}
+
+#ingridients table td:nth-child(1) {
+    width: 10px;
+    padding: 5px;
+}
+#ingridients table th:nth-child(2) {
+    width: 40%;
+}
+#ingridients table td:nth-child(2) {
+    text-align: left;
+    width: 40%;
+    padding: 5px;
+}
+#ingridients table th:nth-child(3) {
+    width: 9%;
+}
+#ingridients table td:nth-child(3) {
+    width: 9%;
+    padding: 5px;
+}
+#ingridients table th:nth-child(4) {
+    width: 9%;
+}
+#ingridients table td:nth-child(4) {
+    width: 9%;
+    padding: 5px;
+}
+#ingridients table th:nth-child(5) {
+    width: 9%;
+}
+#ingridients table td:nth-child(5) {
+    width: 9%;
+    padding: 5px;
+}
+#ingridients table th:nth-child(6) {
+    width: 9%;
+}
+#ingridients table td:nth-child(6) {
+    width: 9%;
+    padding: 5px;
+}
+
+#ingridients td, th {
+    font-size: 0.9em;
+}
+
+#ingridients span:nth-child(1) {
+    float: left;
+    margin-left: 5px;
+    padding: 5px;
+}
+#ingridients span:nth-child(2) {
+    float: right;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+
+/* RECIPE TECHNOLOGY PAGE */
+
+/* technology */
+
+div#technology {
+    position: absolute;
+    overflow: hidden;
+    
+    width: 57%;
+    height: 480px;
+   
+    
+    margin: 20px;
+    
+    background: thistle;
+}
+
+
+/* Main lines Navigation bar */
+#nav-bar {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 90px;
+    height: 580px;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#nav-bar hr {
+    margin-left: 0;
+    margin-right: auto;
+    width: 85%;
+}
+
+#nav-bar ul {
+    margin: 10px 0px 0px 10px;
+    list-style-type: none;
+    padding: 0px;
+}
+#nav-bar ul li{
+    padding-top: 3px;
+    padding-bottom: 4px;
+    width: 70px;
+    height: 70px;
+}
+
+#nav-bar ul img {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+.nav-in-recipe {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    width: 25%;
+    padding: 30px;
+    background: #e6e6e6;
+    border-radius: 35px 0px 0px 35px;
+    box-shadow: inset 0 0 10px
+}
+
+#ingridients-button {
+    bottom: 26%;
+}
+
+#technology-button {
+    bottom: 7%;
+}
+
+.nav-in-recipe div{
+    position: absolute;
+    background: white;
+    top: 13.5%;
+    width: 92%;
+    right:0;
+    padding: 2.5%;
+    border-radius: 25px 0px 0px 25px;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav-in-recipe a div {
+    background: white;
+}
+.nav-in-recipe span{
+    color: black;
+    margin-left: 5%;
+    font-family: 'custom';
+    font-size: 1.5em;
+}
+
+
+/*Blue icon color background: #164f8e;*/

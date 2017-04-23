@@ -1,0 +1,20 @@
+.active#details-title {
+    background: #164F8E;
+}
+.active#details-title p{
+    color: white;
+}
+
+#ingridients-button div.active {
+    background: #164F8E;
+}
+#ingridients-button div.active span {
+    color: white;
+}
+
+#technology-button div.active  {
+    background: #164F8E;
+}
+#technology-button div.active span {
+    color: white;
+}

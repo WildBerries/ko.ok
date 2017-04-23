@@ -1,0 +1,77 @@
+{% extends 'html/base.html' %}
+{% load staticfiles %}
+{% load lines_tags %}
+
+
+{% block title %}{{ recipe.title|title }} - {{ line_name|title }} line{% endblock %}
+
+{% block add_styles %}
+  <link rel="stylesheet" href="{% static "css/recipe_"|concatenate:line_name|concatenate:"_style.css" %}">
+{% endblock add_styles %}
+
+
+
+{% block middle_line_content %}
+      <div id="details-title">
+        <a href={% url 'recipe_details' line_name recipe.slug %}><p>{{ recipe.title }}<p></a>
+      </div>
+  
+    <div id="details-generic">
+
+      <div class="nav-in-recipe" id="ingridients-button">
+        <a href={% url 'recipe_ingridients' line_name recipe.slug %}><div class="active"><span>Ингридиенты</span></div></a>
+      </div>
+
+      <div class="nav-in-recipe" id="technology-button">
+        <a href={% url 'recipe_technology' line_name recipe.slug %}><div><span>Технология</span></div></a>
+      </div>
+
+
+      <div id="ingridients">
+        <table>
+          <tr>
+              <th>{{ recipe.ingridients_headers.number }}</th>
+              <th>{{ recipe.ingridients_headers.name }}</th>
+              <th>{{ recipe.ingridients_headers.weight_brutto }}</th>
+              <th>{{ recipe.ingridients_headers.weight_netto }}</th>
+              <th>{{ recipe.ingridients_headers.measure }}</th>
+              <th>{{ recipe.ingridients_headers.weight_overall }}</th>
+            </tr>
+          {% for key, value in recipe.ingridients.items %}
+            <tr>
+              <td>{{value.number}}</td>
+              <td>{{value.name}}</td>
+              <td>{{value.brutto}}</td>
+              <td>{{value.netto}}</td>
+              <td>{{value.mera}}</td>
+              <td >{{value.weight_overall}}</td>
+            </tr>
+            
+            {% empty %}
+              <p>No Ingridients</p>
+            {% endfor%}
+            <tr>
+              <th colspan="6"><span>Выход готового блюда:</span><span>{{ recipe.dish_output }}</span></th>
+            </tr>
+        </table>
+       
+      </div>
+
+
+
+
+
+
+      <div id="details-image">
+        <img src={{ MEDIA_URL }}/images/{{ recipe.image_filename }}> 
+      </div>
+
+
+      
+    </div>
+
+{% endblock %}
+
+<!--  <div id="delivery">
+        <p><strong>Требования к оформлению, подаче и реализации:</strong><br>{{ recipe.decor_delivery }}</p>
+      </div> -->

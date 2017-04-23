@@ -1,0 +1,86 @@
+{% extends 'html/base.html' %}
+{% load staticfiles %}
+{% load lines_tags %}
+
+
+{% block title %}{{ recipe.title|title }} - {{ line_name|title }} line{% endblock %}
+
+{% block add_styles %}
+  <link rel="stylesheet" href="{% static "css/recipe_"|concatenate:line_name|concatenate:"_style.css" %}">
+
+{% endblock add_styles %}
+
+{% block middle_line_content %}
+      <div class="active" id="details-title">
+        <a href={% url 'recipe_details' line_name recipe.slug %}><p>{{ recipe.title }}<p></a>
+      </div>
+  
+    <div id="details-generic">
+
+      <div class="nav-in-recipe" id="ingridients-button">
+        <a href={% url 'recipe_ingridients' line_name recipe.slug %}><div><span>Ингридиенты</span></div></a>
+      </div>
+
+      <div class="nav-in-recipe" id="technology-button">
+        <a href={% url 'recipe_technology' line_name recipe.slug %}><div><span>Технология</span></div></a>
+      </div>
+
+
+
+      <div id="wrapper">
+
+        <div id="date-release">
+          <span class="sub-header"><sub>Дата ввода / Обновлено:</sub>
+          </span><span class="content">{{ recipe.date_released }} / {{ recipe.date_update }}</span>
+        </div>
+        <hr>
+        <div id="tools">
+            <span class="sub-header"><sub>Оборудование:</sub></span>
+            <table>
+              {% for pair in recipe.tools %}
+                <tr><td>{{ pair.0 }}</td><td>{{ pair.1 }}</td></tr>
+              {% endfor %}
+            </table>
+        </div>
+        <hr>
+        <div id="serving">
+          <span class="sub-header"><sub>Подача:</sub></span><span class="content">{{ recipe.serving_dish }}</span>
+        </div>
+        <hr>
+        <div id="cooknig-time">
+          <span class="sub-header"><sub>Время приготовления:</sub></span><span class="content">{{ recipe.cooking_time }}</span>
+        </div>
+      </div>
+
+
+      <table id="nutrition">
+        <tr>
+          <th>Калорийность</th>
+          <th>Белки, гр.</th>
+          <th><strong>Жиры, гр.</strong></th>
+          <th><strong>Углеводы, гр.</strong></th>
+        </tr>
+        <tr>
+          <th>{{ recipe.nutrition_caloricity }}</th>
+          <th>{{ recipe.nutrition_proteins }}</th>
+          <th>{{ recipe.nutrition_fats }}</th>
+          <th>{{ recipe.nutrition_carbohydrates }}</th>
+        </tr>
+      </table>
+
+      <div id="details-image">
+        <img src={{ MEDIA_URL }}/images/{{ recipe.image_filename }}> 
+      </div>
+
+
+      
+
+    </div>
+
+
+  
+{% endblock %}
+
+<!--  <div id="delivery">
+        <p><strong>Требования к оформлению, подаче и реализации:</strong><br>{{ recipe.decor_delivery }}</p>
+      </div> -->

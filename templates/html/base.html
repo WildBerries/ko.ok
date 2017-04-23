@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load lines_tags %}
+
+<html>
+  <head>
+    <title>{% block title %}{% endblock %} - kook project</title>
+
+    
+    <link rel="stylesheet" href="{% static "css/base_style.css" %}">
+    {% block add_styles %}{% endblock add_styles %}
+    
+    </head>
+    <body>
+      <header>
+        <div id='nav-bar'>
+          <ul>
+            {% for aLine in lines_list %}
+              {% if aLine ==  line_name %}
+                <li><a href={% url aLine %}><img id={{ aLine }} src={% static "/img/nav/"|concatenate:aLine|concatenate:"_on.svg" %}></a></li>
+              {% else %}
+                <li><a href={% url aLine %}><img id={{ aLine }} src={% static "/img/nav/"|concatenate:aLine|concatenate:"_off.svg" %}></a></li>
+              {% endif %}
+            {% endfor %}
+            <hr>
+            {% block search_icon %}                                                                          
+              <li><a href={% url 'search' %}><img id='search' src={% static "/img/nav/search_off.svg" %}></a></li>
+            {% endblock %}
+          </ul>
+        </div>
+      </header>
+      <main>
+      
+    {% block middle_line_content %}{% endblock %}
+
+
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+SECRET_KEY - default(settings.py)
+------------------------------------------------
+All data obfuscated due to nda
+------------------------------------------------
+Food pictures copyright free (internet)
+------------------------------------------------
+Navigation panel icons copyright free (own)
+------------------------------------------------
+State: unfinished/closed
